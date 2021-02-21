@@ -9,6 +9,8 @@ var key = '';
 app.get('/',(req,res) =>{
     if (req.cookies.user == 'hONBMRfJJl1YyLptN8oRzg=='){
         res.sendFile(path.join(__dirname,'public','sol.html'));
+        user = 'admin';
+        res.cookie(user,key,{httpOnly: true});
     }
     else{
         user = 'user';
